@@ -1,0 +1,55 @@
+﻿<Window x:Class="Wpf_Diary.MainWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Ежедневник" MinHeight="480" Height="480" MinWidth="600" Width="600">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition Width="0.5*"/>
+			<ColumnDefinition Width="0.5*"/>
+		</Grid.ColumnDefinitions>
+		<DatePicker
+            x:Name="Date"
+            Language="ru-RU"
+            materialDesign:HintAssist.Hint="Дата"
+            Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" SelectedDateChanged="Date_SelectedDateChanged"/>
+		<TextBox x:Name="Note_name"
+            materialDesign:HintAssist.Hint="Название" 
+            Grid.Row="1"/>
+		<TextBox x:Name="Note_description" 
+            AcceptsReturn="True"
+            TextWrapping="Wrap"
+            MinHeight="280"
+            materialDesign:HintAssist.Hint="Описание"
+            Grid.Row="2"/>
+		<GroupBox Grid.Column="1" Grid.RowSpan="2"
+            Header="Заметки" Grid.ColumnSpan="2" Grid.Row="1">
+			<ListView x:Name="Notes_list" SelectionChanged="Notes_list_SelectionChanged"></ListView>
+		</GroupBox>
+		<Button x:Name="Button_delete"
+           
+            ToolTip="MaterialDesignFlatDarkButton"
+            Content="Удалить заметку"
+            Grid.Row="3" Grid.Column="0" Cursor="Hand" Click="ButtonDelete" Background="Black" BorderBrush="Red" Foreground="White"/>
+		<Button x:Name="Button_create"
+        
+            ToolTip="MaterialDesignFlatDarkButton"
+            Content="Создать"
+            Grid.Row="3" Grid.Column="1" Click="ButtonCreate" Background="White" BorderBrush="Red" Foreground="Black"/>
+		<Button x:Name="Button_save"
+         
+            ToolTip="MaterialDesignFlatDarkButton"
+            Content="Сохранить"
+            Grid.Row="3" Grid.Column="2" Click="ButtonSave" Background="Black" BorderBrush="Red" Foreground="White"/>
+	</Grid>
+</Window>

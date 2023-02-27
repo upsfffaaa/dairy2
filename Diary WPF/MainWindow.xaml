@@ -40,7 +40,7 @@
            
             ToolTip="MaterialDesignFlatDarkButton"
             Content="Удалить заметку"
-            Grid.Row="3" Grid.Column="0" Cursor="Hand" Click="ButtonDelete" Background="Black" BorderBrush="Red" Foreground="White"/>
+            Grid.Row="3" Grid.Column="0" Cursor="Hand" Click="ButtonDelete" Background="#FF26A902" BorderBrush="Red" Foreground="White"/>
 		<Button x:Name="Button_create"
         
             ToolTip="MaterialDesignFlatDarkButton"
@@ -50,6 +50,6 @@
          
             ToolTip="MaterialDesignFlatDarkButton"
             Content="Сохранить"
-            Grid.Row="3" Grid.Column="2" Click="ButtonSave" Background="Black" BorderBrush="Red" Foreground="White"/>
+            Grid.Row="3" Grid.Column="2" Click="ButtonSave" Background="#FF26A902" BorderBrush="Red" Foreground="White"/>
 	</Grid>
 </Window>
